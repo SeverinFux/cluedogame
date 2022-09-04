@@ -22,7 +22,11 @@ public class DataService {
             Arrays.asList(
                     new Person("Herr", "Fux", 13, "Metzger", "Baige"),
                     new Person("Herr", "Ruff", 17,"Einfach Reich", "Bruun"),
-                    new Person("Herr", "Vjaee", 15, "Bauarbeiter", "Schwarz")
+                    new Person("Herr", "Vjaee", 15, "Bauarbeiter", "Schwarz"),
+                    new Person("Frau", "Züst", 23, "Lehrerin", "Rot"),
+                    new Person("Herr", "XD", 17,"Putzman", "Schwarz"),
+                    new Person("Frau", "Rhyner", 54, "Köchin", "Weiss")
+
             )
     );
     private List<Wapons> waponList = new ArrayList<>(
