@@ -1,0 +1,38 @@
+body{
+    margin-left: 30px;
+    margin-top: 30px;
+    background: #000000;
+    animation: color 9s infinite linear;
+    text-align: left;
+    color: #d3d3d3;
+    font-family: "Courier New";
+}
+h1{
+    color: #8c8c8c;
+    text-shadow: 2px 2px #ffffff;
+    size: 30px;
+}
+
+table {
+    width: 60%;
+    border-collapse: collapse;;
+}
+table, td, th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+}
+
+@keyframes color {
+    0%   { background: rgba(37, 38, 42, 0.75); }
+    30%  { background: rgba(20, 22, 24, 0.75); }
+    60%  { background: rgba(25, 25, 28, 0.75); }
+    100% { background: rgba(37, 38, 42, 0.75); }
+}
+.overviewTable, .darkerBackground{
+    background-color: rgba(66, 68, 75, 0.75)
+}

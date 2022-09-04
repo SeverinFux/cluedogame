@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" type="text/css" href="Style.css" />
 <head>
     <meta charset="UTF-8">
     <title>MyWeb</title>
 </head>
 <body>
 
-<h2>Cluedon</h2>
+<h1>Cluedon</h1>
+Persons & Wapons
 <table>
-    <tr>
-    <th>Webon</th>
-    <th>Person</th>
-    <th>Namon</th>
+    <tr class="overviewTable">
+    <th>Anrede</th>
+    <th>Name</th>
+    <th>Alter</th>
+    <th>Beruf</th>
+    <th>Haarfarbe</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
+
+    <tr th:each="person : ${personlist}">
+        <td th:text="${person.anrede}"></td>
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.alter}"></td>
+        <td th:text="${person.beruf}"></td>
+        <td th:text="${person.haarfarbe}"></td>
     </tr>
+
+    <tr class="overviewTable">
+        <th>Bezeichnung</th>
+        <th>Länge in Centimeter</th>
+        <th>Gewicht in Gramm</th>
+        <th>Nutzungsbereich</th>
+        <th>Material</th>
+    </tr>
+
+    <tr th:each="wapon : ${waponlist}">
+        <td th:text="${wapon.bezeichnung}"></td>
+        <td th:text="${wapon.laengeInCm}"></td>
+        <td th:text="${wapon.gewichtInG}"></td>
+        <td th:text="${wapon.nutzungsBereich}"></td>
+        <td th:text="${wapon.material}"></td>
+    </tr>
+
 </table>
+<br/>
+<br/>
+<footer class="darkerBackground" >@SéverinFux 2022 </footer>
 </body>
 </html>
