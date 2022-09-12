@@ -1,20 +1,24 @@
 package com.example.cluedogame.Models;
 
-import java.util.ArrayList;
+import lombok.Data;
+
 import java.util.List;
-
+@Data
 public class Room {
-    String name;
-    int anzTueren;
+    public String roomName;
     String bodenbelag;
-    List<Room> roomsList = new ArrayList<>();
+    int anzTueren;
+    int anzFenster;
+    List<String> moebel;
 
-    public Room(String name, int anzTueren, String bodenbelag) {
-        this.name = name;
-        this.anzTueren = anzTueren;
-        this.bodenbelag = bodenbelag;
+    public Room(){
+
     }
-    public List<Room> getRoomsList(){
-        return roomsList;
+    public Room(String name, String bodenbelag, int anzTueren, int anzFenster, List<String> moebel) {
+        this.roomName = name;
+        this.bodenbelag = bodenbelag;
+        this.anzTueren = anzTueren;
+        this.anzFenster = anzFenster;
+        this.moebel = moebel;
     }
 }

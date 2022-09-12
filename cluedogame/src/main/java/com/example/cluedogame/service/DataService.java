@@ -31,9 +31,22 @@ public class DataService {
     );
     private List<Wapons> waponList = new ArrayList<>(
             Arrays.asList(
-                    new Wapons("Seil", 250, 13, "Saide", "Befestigung"),
+                    new Wapons("Seil", 250, 13, "Seide", "Befestigung"),
                     new Wapons("Dolch", 48, 17,"Eisen", "Angriff / Verteidigung"),
-                    new Wapons("Herzenständer", 45, 15, "Gusseisen", "Lichtunterstützung")
+                    new Wapons("kerzenständer", 45, 15, "Gusseisen", "Lichtunterstützung"),
+                    new Wapons("Badewanne", 250, 3000, "Gusseisen", "säubern"),
+                    new Wapons("TikTok", 6, 30, "Plastik", "Jonas"),
+                    new Wapons("Rohr", 80, 150, "Eisen", "wasserleitung")
+            )
+    );
+    private List<Room> roomList = new ArrayList<>(
+            Arrays.asList(
+                    new Room("Küche","Stein", 1,3, new ArrayList<>(List.of("Herd", "Kühlschrank", "Waschbecken"))),
+                    new Room("Wohnzimmer","Holz", 3,4, new ArrayList<>(List.of("Sofa", "Tisch", "Stuhl"))),
+                    new Room("Gästezimmer","Tepich", 2,1, new ArrayList<>(List.of("Bett", "Schrank", "Tisch"))),
+                    new Room("Badezimmer","Keramik", 6,3, new ArrayList<>(List.of("Herd", "Kühlschrank", "Waschbecken"))),
+                    new Room("Kinderzimmer","Holz", 1,1, new ArrayList<>(List.of("Kinderbett", "Tisch", "Schublade"))),
+                    new Room("Toilette","Keramik", 1,1, new ArrayList<>(List.of("WC", "Lavabo", "Schrank")))
             )
     );
 }

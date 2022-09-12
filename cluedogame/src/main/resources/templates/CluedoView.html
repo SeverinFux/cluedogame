@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="Style.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
 <head>
     <meta charset="UTF-8">
     <title>MyWeb</title>
 </head>
 <body>
-
+<script src="/static/script.js"></script>
 <h1>Cluedon</h1>
-Persons & Wapons
-<table>
-    <tr class="overviewTable">
-    <th>Anrede</th>
+
+
+<div class="divTestMenu">
+    <table style=" top:0px; display:inline-block;">
+        <th>Verdächtigte Person</th>
+        <th/>
+        <tr th:each="person : ${personlist}" >
+            <td th:text="${person.anrede} +' '+ ${person.name}"></td>
+            <td> <input type="radio" name="personSuspect" value=""/></td>
+        </tr>
+    </table>
+    <table style=" top:0px; display:inline-block;" >
+        <th>Tatwaffe</th>
+        <th/>
+        <tr th:each="wapon : ${waponlist}">
+            <td th:text="${wapon.bezeichnung}"></td>
+            <td> <input type="radio" name="waponSuspect" value=""/></td>
+        </tr>
+    </table>
+    <table style=" top:0px; display:inline-block;" >
+        <th>Ort des Geschehens</th>
+        <th/>
+        <tr th:each="room : ${roomlist}"  >
+            <td th:text="${room.roomName}"></td>
+            <td> <input type="radio" name="roomSuspect" value=""/></td>
+        </tr>
+    </table><br/>
+   <button style="align-content: center">Guess Senden...</button>
+</div>
+
+<table class="overviewTable">
+    <tr class="overviewTr">
+    <th id="1">Anrede</th>
     <th>Name</th>
     <th>Alter</th>
     <th>Beruf</th>
@@ -26,7 +55,7 @@ Persons & Wapons
         <td th:text="${person.haarfarbe}"></td>
     </tr>
 
-    <tr class="overviewTable">
+    <tr class="overviewTr">
         <th>Bezeichnung</th>
         <th>Länge in Centimeter</th>
         <th>Gewicht in Gramm</th>
@@ -42,8 +71,35 @@ Persons & Wapons
         <td th:text="${wapon.material}"></td>
     </tr>
 
+    <tr class="overviewTr">
+        <th>Zimmername</th>
+        <th>Bodenbelag</th>
+        <th>Anz. Türen</th>
+        <th>Anz. Fenster</th>
+        <th>Möbel</th>
+    </tr>
+
+    <tr th:each="room1 : ${roomlist}">
+        <td id="roomNameID" th:text="${room1.roomName}" onclick="changeBackroundColor(this.id)"></td>
+        <td id="roomBelagID" th:text="${room1.bodenbelag} " onclick="changeBackroundColor(this.id)" ></td>
+        <td th:text="${room1.anzTueren}"></td>
+        <td th:text="${room1.anzFenster}"></td>
+        <td th:text="${room1.moebel}"></td>
+    </tr>
+
+
 </table>
-<br/>
+
+<p>Select your size:</p>
+<div id="group">
+</div>
+
+<p id="output"></p>
+
+<script>
+
+</script>
+
 <br/>
 <footer class="darkerBackground" >@SéverinFux 2022 </footer>
 </body>
